@@ -1,0 +1,13 @@
+{
+  "name": "urbane",
+  "title": "urbane",
+  "displayName": "urbane",
+  "theme": "ui",
+  "version": "0.0.9",
+  "description": "Based on elementary UI, but with some inovative tweaks.",
+  "license": "GPL-3.0",
+  "engines": {
+    "mailspring": "*"
+  }
+}
+
