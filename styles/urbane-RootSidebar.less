@@ -1,0 +1,145 @@
+.column-RootSidebar .account-sidebar {
+  background: @toolbar !important;
+  border: none;
+  border-top: 1.5px solid @barLightTwinBorder;
+  text-shadow: 0 .5px 0 rgba(255,255,255,.7);
+}
+
+/**** Mappar  ****/
+
+/*börjar med att justera padding lite i mappnamnen så att inte ikonen ligger dikt ann*/
+.nylas-outline-view .item {
+  padding-left: 3px;
+  margin-right: 1px;
+  border: .5px solid rgba(255,255,255,.0); /* en tom kant så att items inte flyttar på sig när man väljer */
+}
+/*räknarna, dom är vita redan och blir feta med skuggan*/
+.nylas-outline-view .item .item-count-box.alt-count {
+  text-shadow: none;
+  box-shadow: 0 .5px 1px .5px @shadowWeak,
+  0 -.5px 0 0 @borderSideBright;
+}
+.nylas-outline-view .item.selected .item-count-box.alt-count {
+  text-shadow: none;
+  background: @accent-primary;
+  box-shadow: none;
+  color: @brightView !important;
+}
+/*mapparna borde markeras vid :hover, gör dom svarta och gör ikonerna blåa*/
+.nylas-outline-view .item:hover .name {
+  color: #222;
+}
+.nylas-outline-view .item:hover img.content-mask {
+  background-color: @accent-primary-dark;
+}
+/*och när en mapp är vald*/
+.nylas-outline-view .item.selected {
+  /*background: linear-gradient(to bottom, darken(@toolbar, 4%), darken(@toolbar, 3%)) !important;
+  border-top: .5px solid darken(@barLightTwinBorder, 3%);
+  border-left: .5px solid darken(@barLightTwinBorder, 3%);
+  border-bottom: .5px solid @barLightTwinBorder;
+  border-right: .5px solid @barLightTwinBorder;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow:inset 0 0 .5px .5px rgba(0,0,0,.2);*/
+
+  background: linear-gradient(to bottom, lighten(@toolbar, 5%), lighten(@toolbar, 2%)) !important;
+  /*border: .5px solid rgba(255,255,255,.2);
+  border-top: .5px solid rgba(255,255,255,.9);*/
+  border-radius: 3px 3px 3px 3px;
+  /* vertikal horisontal spridning tjocklek  */
+  /*box-shadow: 0 0 0 .5px @weakBorder !important;*/
+  border: .5px transparent; /*blir CP när solid*/
+  box-shadow: 0.5px 0 0 0 @weakBorder,
+    -0.5px 0 0 0 @weakBorder,
+    0 0.5px 0 0 @weakBorder,
+    0 -0.5px 0 0 @weakBorder,
+    inset 0 .5px 0 0 @borderAlmostSuperBright,
+    inset 0 -.5px 0 0 @borderSideBright,
+    inset .5px 0 0 0 @borderSideBright,
+    inset -.5px 0 0 0 @borderSideBright !important;
+}
+.nylas-outline-view .item.selected:hover {
+  background: linear-gradient(to bottom, lighten(@toolbar, 3%), lighten(@toolbar, 1%)) !important;
+  /*border-top: .5px solid rgba(255,255,255,.6);*/
+  box-shadow: 0.5px 0 0 0 @weakBorder,
+    -0.5px 0 0 0 @weakBorder,
+    0 0.5px 0 0 @weakBorder,
+    0 -0.5px 0 0 @weakBorder,
+    inset 0 .5px 0 0 @borderBright,
+    inset 0 -.5px 0 0 @borderSideBright,
+    inset .5px 0 0 0 @borderSideBright,
+    inset -.5px 0 0 0 @borderSideBright !important;
+}
+.nylas-outline-view .item.selected:hover .name {
+  color: @accent-primary-dark;
+}
+
+/*** Aviseingar ***/
+
+.notifications {
+	background: @toolbar !important;
+	box-shadow: 0 -6px 4px @toolbar !important;
+	border-bottom: .5px solid @barLightTwinBorder;
+  overflow: hidden;
+}
+.notification.highest-priority {
+  background: linear-gradient(to top, #ff7702 0%, #ff9a03 100%);
+  border: .5px solid @barLightTwinBorder;
+  border-top: .5px solid lighten(@barLightTwinBorder, 20%);
+  box-shadow: 0 0 0 .5px @weakBorder, 0 0 5px 1px @shadowWeak;
+  text-shadow: 0 .5px 0 rgba(0,0,0,.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.notification.error {
+	  border: .5px solid rgba(255,255,255,.5);
+    border: .5px solid @barLightTwinBorder;
+    border-top: .5px solid lighten(@barLightTwinBorder, 20%);
+  	box-shadow: 0 0 0 .5px @weakBorder, 0 0 5px 1px @shadowWeak;
+    text-shadow: 0 .5px 0 rgba(0,0,0,.2);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.notification .action { /*kör den ljusa skuggan genomskinlig så att det inte blir lager-på-lager ovanpå skylten*/
+  border-top: .5px solid @barLightTwinBorderBS; /*istället för twinborder så kör jag vit trans p.g.a skylt-färg*/
+  box-shadow: 0 .5px 0 0 @barLightTwinBorder,
+  .5px 0 0 0 @barLightTwinBorder,
+  -.5px 0 0 0 @barLightTwinBorder,
+  0 -.5px 0 0 @weakBorderBS;
+}
+.notification .action:first-child {
+  border-right: 1px solid rgba(200,200,200,.2);
+  border-radius: 0 0 0 2px;
+  box-shadow: 0 .5px 0 0 @barLightTwinBorder,
+  .5px 0 0 0 @barLightTwinBorderBS,
+  -.5px 0 0 0 @barLightTwinBorder,
+  0 -.5px 0 0 @weakBorderBS;
+}
+/*FIXME: last-child CP:ar till ensam knapp*/
+/*
+.notification .action:last-child {
+  border-left: .5px solid rgba(200,200,200,.2);
+  border-radius: 0 0 2px 0;
+  box-shadow: 0 .5px 0 0 @barLightTwinBorder,
+  .5px 0 0 0 @barLightTwinBorder,
+  -.5px 0 0 0 rgba(106,106,106,.8),
+  0 -.5px 0 0 @weakBorderBS;
+}*/
+.notification .action:hover {
+  background: rgba(220,250,220,.1);
+}
+.notification .action:active {
+  background: rgba(120,150,120,.1);
+}
+
+/*** Status ***/
+
+.sidebar-activity-floating-container {
+	border-top: .5px solid @weakBorder !important;
+}
+.sidebar-activity {
+	background: @toolbar !important;
+	border-top: .5px solid @barLightTwinBorder !important;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0) !important;
+  text-shadow: 0 .5px 0 rgba(255,255,255,.7);
+}

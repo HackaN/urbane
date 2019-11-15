@@ -1,0 +1,28 @@
+.preferences-wrap .container-preference-tabs .preferences-tabs {
+background: @toolbar !important;
+border: none;
+padding-top: 1px !important;
+padding-bottom: 1px !important;
+border-bottom: #dadada solid 1px;
+}
+.preferences-wrap .container-preference-tabs {
+  border-top: 1.5px solid @barLightTwinBorder;
+  border-bottom: .5px solid @weakBorder;
+}
+.preferences-wrap .container-preference-tabs .preferences-tabs .item {
+  color: #666;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+.preferences-wrap .container-preference-tabs .preferences-tabs .item:hover {
+  color: #222;
+}
+/*kör samma stil som för mapparna*/
+.preferences-wrap .container-preference-tabs .preferences-tabs .item.active {
+  background: linear-gradient(to bottom, lighten(@toolbar, 5%), lighten(@toolbar, 2%)) !important;
+  border: .5px solid rgba(255,255,255,.2);
+  border-top: .5px solid rgba(255,255,255,.9);
+  border-radius: 3px 3px 3px 3px; /* 3px 3px 0 0 om dom ska ligga dikt an*/
+  /* vertikal horisontal spridning tjocklek  */
+  box-shadow: 0 0 0 .5px @weakBorder !important;
+  color: @accent-primary-dark;
+}

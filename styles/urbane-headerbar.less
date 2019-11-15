@@ -1,0 +1,207 @@
+.sheet-toolbar {
+  border: 1px solid @barLightTwinBorder !important;
+  box-shadow: 0 0 0 .5px @weakBorder !important;
+}
+.layout-mode-popout .sheet-toolbar {
+  border: 1px solid @barLightTwinBorder !important;
+  box-shadow: 0 0 0 0 transparent !important;
+}
+
+.toolbar-RootSidebar,
+.toolbar-ThreadList,
+.toolbar-MessageList,
+.toolbar-MessageListSidebar,
+.sheet-toolbar-container,
+.toolbar-Center,
+.toolbar-Preferences,
+.toolbar-ActivityContent,
+.toolbar-DraftList {
+  height: 100%;
+  background-image: linear-gradient(#e6e6e6 , #d1d1d1);
+}
+
+.thread-search-bar,
+.thread-search-bar.blurred {
+
+  /* FIXME : gör den här likadan som svarslådan */
+
+  /*background-image: linear-gradient(rgb(240,240,240), rgb(250,250,250));
+  border: .5px solid @weakBorder;
+  box-shadow:inset 0 0 1px .5px rgba(0,0,0,.2);*/
+
+  /*border-top: .5px solid @strongBorder;
+  border-left: .5px solid @weakBorder;
+  border-right: .5px solid @weakBorder;*/
+
+  background-image: linear-gradient(rgb(240,240,240), rgb(250,250,250));
+  /*border-bottom: .5px solid @view;*/
+
+  /* veriosn 1
+  box-shadow: inset 0 0 20px 0 rgba(100, 100, 100, 0.2),
+    inset 0 .5px 1px 0 rgba(0,0,0,.1),
+    0 -.5px 0 .5px #a6a6a6; -utan gradient-bakgrund*/
+    /* version 2
+    box-shadow: inset 0 0 .5px 0 rgba(0,0,0,.1),
+      inset 0 .5px 2px 0 @shadowWeak,
+      0 .5px 0 .5px @weakBorder,
+      .5px 0 0 .5px @sideBar,
+      -.5px 0 0 .5px @sideBar,
+      0 -.5px 0 .5px #a6a6a6;*/
+      /*version 3 *//*
+  box-shadow: 0 -.5px 0 0 @weakBorder,
+    -.5px 0 0 0 @borderSideBright,
+    .5px 0 0 0 @borderSideBright,
+    0 .5px 0 0 @borderBright,
+    inset 0 .5px 3px .5px @shadowHalfWeak;*/
+
+    box-shadow: inset 0 0 3px 0 @shadowWeak,
+    0 .5px 0 0 #efefef;
+    border: .5px solid #adadad;
+    border-top: .5px solid #999;
+    /*border-bottom: .5px solid @borderHalfBright; blir mer clean:t utan extra ram*/
+  /*height: 23.5px;
+  margin-top: 7.5px;*/
+}
+.thread-search-bar:hover .tokenizing-contenteditable .layer-text {
+  /*color: #888;*/
+}
+.search-accessory img.content-mask {
+  background: @accent-primary !important; /*// FIXME: */
+}
+.thread-search-bar:hover {
+  background-image: linear-gradient(rgb(245,245,245), rgb(255,255,255));
+}
+.thread-search-bar.focused {
+  background: @snowWhite;
+  box-shadow: inset 0 0 3px 0 @shadowHalfWeak,
+  0 .5px 0 0 #efefef;
+  border: .5px solid @accent-primary;
+  border-top: .5px solid @accent-primary;
+}
+
+
+/* Knappar.
+prova att köra box-shadow:inset så att du kan köra olika ljus på border
+- .only-item är för från-konto och andra knappar i UI. Blir problem med att skriva över
+knater och bakgrunder, lämna orört.
+*/
+
+.button-group {
+
+}
+
+.btn-toolbar,
+.dropdown-menu,
+select {
+  background: transparent;
+  background-image: linear-gradient(#e6e6e6 , #d1d1d1);
+  /*border: .5px solid lighten(@background-off-primary, 5%);*/
+  /*border: .5px solid rgba(255,255,255,.2);
+  border-top: .5px solid rgba(255,255,255,.9);*/
+  border-radius: 3px 3px 3px 3px;
+  /* vertikal horisontal spridning tjocklek  */
+  /*
+  box-shadow verkar renderas bättre på normalDPI skärmar.
+  Det verkar också bli bättre (rundade iaf) hörn om man specifiserar alla sidorna
+  */
+  border: .5px transparent; /*blir CP när solid*/
+  box-shadow: 0.5px 0 0 0 @weakBorder,
+    -0.5px 0 0 0 @weakBorder,
+    0 0.5px 0 0 @weakBorder,
+    0 -0.5px 0 0 @weakBorder,
+    inset 0 .5px 0 0 @borderAlmostSuperBright,
+    inset 0 -.5px 0 0 @borderSideBright,
+    inset .5px 0 0 0 @borderSideBright,
+    inset -.5px 0 0 0 @borderSideBright !important;
+}
+.toolbar-activity {
+  margin-top: 5px;
+  margin-bottom: 4px;
+  margin-right: 20% !important;
+  background-image: linear-gradient(#e6e6e6 , #d1d1d1);
+  /*border: .5px solid rgba(255,255,255,.2);
+  border-top: .5px solid rgba(255,255,255,.9);*/
+  border-radius: 3px 3px 3px 3px;
+  border: .5px transparent; /*blir CP när solid*/
+  box-shadow: 0.5px 0 0 0 @weakBorder,
+    -0.5px 0 0 0 @weakBorder,
+    0 0.5px 0 0 @weakBorder,
+    0 -0.5px 0 0 @weakBorder,
+    inset 0 .5px 0 0 @borderAlmostSuperBright,
+    inset 0 -.5px 0 0 @borderSideBright,
+    inset .5px 0 0 0 @borderSideBright,
+    inset -.5px 0 0 0 @borderSideBright !important;
+}
+
+.btn-toolbar:hover,
+.dropdown-menu:hover,
+select:hover,
+.button-dropdown .primary-item:hover,
+.button-dropdown .secondary-picker:hover,
+.toolbar-activity:hover {
+ box-shadow: 0 0 0 .5px @accent-primary !important;
+ /*color: @accent-primary-dark !important;*/
+}
+.btn-toolbar:active,
+.dropdown-menu:active,
+select:active,
+.button-dropdown .primary-item:active,
+.button-dropdown .secondary-picker:active,
+.toolbar-activity:active {
+  background-image: linear-gradient(darken(#e6e6e6, 3%) , darken(#d1d1d1, 3%));
+  box-shadow: inset 0 0 3px 0 @weakBorder !important;
+  border: .5px solid @strongBorder;
+  border-top: .5px solid @strongBorder;
+ /*color: @accent-primary-dark !important;*/
+}
+.toolbar-activity .activity-toolbar-icon {
+  background: rgba(90,90,90,.8);
+  margin: 18px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.btn-toolbar:hover img.content-mask,
+.dropdown-menu:hover img.content-mask,
+select:hover img.content-mask,
+.button-dropdown .primary-item:hover img.content-mask,
+.button-dropdown .secondary-picker:hover img.content-mask,
+.sheet-toolbar .item-back:hover img.content-mask,
+.toolbar-activity:hover .activity-toolbar-icon {
+  background-color: @accent-primary-dark !important;
+}
+/*Började med att tvinga alla kanter att vara kurvade för att fixa en gruppknapp som var ensam och såg störd ut med rak v-kant.
+Justerade därefter tillbaka knapparna i grupper (.button-group), men det blev exakt samma resultat, så hoppar över det.
+*/
+/*Börjar med vänter gruppknapp
+*/
+/*.sheet-toolbar .button-group .btn.btn-toolbar:not(:last-child) {
+  border-radius: 3px 0 0 3px !important;
+}
+.sheet-toolbar .button-group .btn.btn-toolbar:last-child {
+  border-radius: 0 3px 3px 0 !important;
+}*/
+.only-item {
+  background: transparent !important;
+}
+/*special-inställning för compose-knapp*/
+body.platform-linux .item-compose {
+  margin-left: 20px !important;
+}
+/*.only-item {
+  color: @accent-primary;
+  box-shadow: 0 .5px .5px .5px rgba(0,0,0,.2);
+}
+.only-item:active {
+  background: @accent-primary-dark !important;
+  color: @snowWhite;
+}*/
+/*knappar för att lägga till hemliuga kopior etc, måste stylas mera än knapparna ovan.
+Lämnar orört tillsvidare*/
+.action {
+
+}
+
+/*justerar knapparna neutralt, sista skärs annars av*/
+.message-toolbar-items {
+  order: 0 !important;
+}

@@ -1,0 +1,540 @@
+
+/*utökningen heter .column-MessageListSidebar*/
+.column-MessageList {
+  border: 0px none transparent;
+  border-top: .5px solid @weakBorder;
+}
+/*brev i huvugränssnittet*/
+#message-list .messages-wrap .scroll-region-content-inner,
+#message-list .messages-wrap.ready {
+  /*background: @toolbar;
+  border: none;
+  border-top: 1.5px solid @barLightTwinBorder;*/
+  background: @brightView;
+}
+/*brev i eget fönster
+- Inkluderar flikarna för inställningar här också som ska köra samma stil
+*/
+.column-Center #message-list .messages-wrap.ready .scroll-region-content-inner,
+.column-Center #message-list .messages-wrap.ready {
+  background: @toolbar;
+  border: none;
+  border-top: .5px solid @barLightTwinBorder;
+  padding: 0px !important;
+}
+
+.column-Center {
+  border-top: .5px solid @weakBorder;
+}
+
+.column-MessageListSidebar {
+  background: @panel-background-color;
+  border: 0px none transparent;
+  border-left: .5px solid  @strongBorder;
+  border-top: .5px solid @weakBorder;
+  /*background: @toolbar;
+  border: none;
+  border-top: 1.5px solid @barLightTwinBorder;*/
+}
+
+/*ämnet i huvudfönstret*/
+.message-subject-wrap {
+  text-shadow: 0 1px 0 rgba(255,255,255,1);
+}
+/*ämnet i eget fönster (mörkare bakgrund så svagare gloss)*/
+.column-Center .message-subject-wrap,
+.sheet-toolbar .item-back {
+  text-shadow: 0 1px 0 rgba(255,255,255,.7);
+}
+.sheet-toolbar .item-back img,
+.sheet-toolbar .message-toolbar-arrow.down img,
+.sheet-toolbar .message-toolbar-arrow.up img,
+.sheet-toolbar .item-back img.content-mask {
+  box-shadow: 0 1px 0 rgba(255,255,255,.7) !important;
+  border: 1px solid black !important;
+}
+/*Brev-ikoner "skriv ut" och "poppa ut"*/
+#message-list .message-icons-wrap img.content-mask:hover {
+  background-color: @accent-primary-dark;
+}
+
+/*visning av brev*/
+.message-item-area {
+  background: #fff;
+  border: .5px solid @weakBorder;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.2); /*andra skuggan skapar relation till svarslådan*/
+  /*padding: 0px 1px 3px 1px; "vilt designade brev" ser bättre ut utan bred vit omgivning -- Skiter i det. Rena text-brev får ingen marginal*/
+}
+#message-list .message-header {
+  /*padding: 15px;  för att kompensera mot att vi skar ner på omgivningen ovan*/
+}
+/*knappar i huvudet på brevet följer headerbar-knappar.
+Men kör extra inställning här för att det inte funkar med kanterna annars.
+- Dock så finns :hover-inställningarna i headerbar
+- Lägger även in inställning för bifogade saker här (bara ställer in knapparna. Texter får specialinstöllningar efter)
+*/
+.attachments-area {
+  padding-top: 15px;
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.nylas-attachment-item {
+  box-shadow: 0 -1px 5px 0 rgba(0,0,0,.1);
+  border-radius: 3px;
+}
+/*.nylas-attachment-item .file-thumbnail-preview,*/
+.button-dropdown .primary-item,
+.nylas-attachment-item .file-info-wrap,
+.nylas-attachment-item .file-action-icon.quicklook,
+.button-dropdown .secondary-picker,
+.nylas-attachment-item .file-action-icon,
+.RichEditor-toolbar button.with-select {
+  background-image: linear-gradient(#e6e6e6 , #d1d1d1);
+  border: .5px !important;
+  box-shadow: 0.5px 0 0 0 @weakBorder,
+    -0.5px 0 0 0 @weakBorder,
+    0 0.5px 0 0 @weakBorder,
+    0 -0.5px 0 0 @weakBorder,
+    inset 0 .5px 0 0 @borderAlmostSuperBright,
+    inset 0 -.5px 0 0 @borderSideBright,
+    inset .5px 0 0 0 @borderSideBright,
+    inset -.5px 0 0 0 @borderSideBright !important;
+  text-shadow: 0 .5px 0 @white;
+}
+
+.nylas-attachment-item .file-thumbnail-preview {
+border-radius: 3px 3px 0px 0px; /*öV öH uH uV*/
+border: 1px dashed @weakBorder; /*blir bättre dashes med 1px*/
+}
+.button-dropdown .primary-item,
+.button-dropdown.btn-emphasis .primary-item,
+.nylas-attachment-item .file-info-wrap {
+  border-radius: 3px 0 0 3px !important; /*öV öH uH uV*/
+}
+.nylas-attachment-item .file-action-icon.quicklook {
+  border-radius: 0px 0px 0px 0px !important;
+}
+.button-dropdown .secondary-picker,
+.button-dropdown.btn-emphasis .secondary-picker,
+.nylas-attachment-item .file-action-icon {
+  border-radius: 0 3px 3px 0 !important; /*öV öH uH uV*/
+}
+/*en extra-inställning till ladda ner knappen som annars är utgråad*/
+.nylas-attachment-item .file-info-wrap,
+.nylas-attachment-item .file-info-wrap .file-size {
+  color: #6a6a6a;
+}
+.nylas-attachment-item .file-action-icon img {
+  background-color: #6a6a6a;
+}
+/*notera att jag ändrar bara färg på titeln, storleken är kvar i samma färg*/
+.button-dropdown .primary-item:hover,
+.button-dropdown .secondary-picker:hover,
+.nylas-attachment-item .file-info-wrap:hover,
+.nylas-attachment-item .file-action-icon:hover,
+.RichEditor-toolbar button.with-select:hover {
+  color: @accent-primary;
+  box-shadow: 0.5px 0 0 0 @accent-primary,
+    -0.5px 0 0 0 @accent-primary,
+    0 0.5px 0 0 @accent-primary,
+    0 -0.5px 0 0 lighten(@accent-primary, 10%),
+    inset 0 .5px 0 0 @borderAlmostSuperBright,
+    inset 0 -.5px 0 0 @borderSideBright,
+    inset .5px 0 0 0 @borderSideBright,
+    inset -.5px 0 0 0 @borderSideBright !important;
+}
+
+.nylas-attachment-item .file-action-icon:hover img {
+  background-color: @accent-primary;
+}
+
+.button-dropdown .primary-item:active,
+.button-dropdown .secondary-picker:active,
+.nylas-attachment-item .file-info-wrap:active,
+.nylas-attachment-item .file-action-icon:active,
+.RichEditor-toolbar button.with-select:active {
+background-image: linear-gradient(darken(#e6e6e6, 3%) , darken(#d1d1d1, 3%));
+border: .5px;
+box-shadow: 0.5px 0 0 0 @strongBorder,
+  -0.5px 0 0 0 @strongBorder,
+  0 0.5px 0 0 @strongBorder,
+  0 -0.5px 0 0 @strongBorder,
+  inset 0 0 3px 0 @weakBorder !important;
+color: #333;
+}
+/* skicka-knappen har en egen inställning här nedan.
+- Skillnaden på primary och secondary ovan är att de har olika kurvor */
+/*Notering: Av någon anledning så går det inte att använda @VARIABLE i gradient-inställningarna*/
+
+/*skicka knapp omslutare*/
+.composer-inner-wrap .composer-action-bar-wrap .btn-send {
+  border: transparent; /*körde .5px först, men det blir en miss-ram på secondary picker. Box-shadow får samma resultat men fixar miss-ram*/
+  /*box-shadow: 0 .5px 0 0 @strongBorder,
+  .5px 0 0 0 @strongBorder,
+  -.5px 0 0 0 @strongBorder,
+  0 -.5px 0 0 @weakBorder,*
+  inset 0 0.5px 0 0 #2fb9ff,
+  inset 0 -0.5px 0 0 #139fff,
+  inset .5px 0 0 0 #2f9ffc,
+  inset -.5px 0 0 0 #2f9ffc !important;*/
+  /* tweaakad i inspector:*/
+  /*box-shadow: 0 0 .5px 0 @weakBorder;*/
+  border-radius: 3px !important;
+  margin: 2.5px 1px 1px 1px; /*var !important förut, men verkar bättre utan*/
+  height: 24px; /*den här hindrar knappen från att bli dubbeldäckare när verktygen blir två rader*/
+  background: linear-gradient(to bottom, lighten(#1f9bfc, 5%) 0%, darken(#1f9bfc, 10%) 100%); /*vid vissa upp/ned -skalningar så uppstår ett fult glapp intill höger kant på ".secondary-picker". Lägger ut en backgrund under knappen för att dölja */
+}
+/*skicka knappar*/
+.button-dropdown.btn-emphasis .primary-item,
+.button-dropdown.btn-emphasis .secondary-picker {
+  background: linear-gradient(to bottom, lighten(#1f9bfc, 5%) 0%, darken(#1f9bfc, 10%) 100%);
+  box-shadow: 0.5px 0 0 0 rgba(100,100,170,0.9),
+    -0.5px 0 0 0 rgba(100,100,170,0.9),
+    0 0.5px 0 0 rgba(100,100,170,0.9),
+    0 -0.5px 0 0 rgba(100,100,170,0.9),
+    inset 0 0.5px 0 0 rgba(255, 255, 255, 0.4),
+    inset 0 -0.5px 0 0 rgba(255, 255, 255, 0.2),
+    inset 0.5px 0 0 0 rgba(255, 255, 255, 0.2),
+    inset -0.5px 0 0 0 rgba(255, 255, 255, 0.2) !important;
+    /*padding: 0 3px !important;*/
+    border: .5px !important;
+    /*font-size: 13px !important;*/
+    font-weight: 400;
+    text-shadow: 0 0 1px @shadowHalfWeak;
+    height: 1.85em;
+}
+
+.button-dropdown.btn-emphasis .primary-item:hover,
+.button-dropdown.btn-emphasis .secondary-picker:hover
+ {
+  background: linear-gradient(to bottom, lighten(#1f9bfc, 15%) 0%, darken(#1f9bfc, 0%) 100%);
+  color: white;
+}
+.nylas-attachment-item .file-action-icon:hover img {
+  background-color: @accent-primary;
+}
+.button-dropdown.btn-emphasis .primary-item:active,
+.button-dropdown.btn-emphasis .secondary-picker:active {
+  background: linear-gradient(to bottom, darken(#1f9bfc, 0%) 0%, lighten(#1f9bfc, 5%) 100%);
+}
+.button-dropdown.btn-emphasis .primary-item:hover img.content-mask,
+.button-dropdown.btn-emphasis .secondary-picker:hover img.content-mask {
+  background: @snowWhite !important;
+}
+/*... och svarslådan under (i huvudfönster)*/
+#message-list .footer-reply-area-wrap {
+  background: @sunkenBack;
+  border-left: .5px solid @white;
+  border-bottom: .5px solid @snowWhite;
+  border-right: .5px solid @white;
+  box-shadow:inset 0 .5px 1px 1px @shadowWeak;
+  text-shadow: 0 1px 0 rgba(255,255,255,.7);
+  z-index: -1 !important; /*för att det ser kasst ut annars*/
+}
+/*... och svarslådor  under (eget fönster, lite mörkare bakgrund)*/
+.column-Center #message-list .messages-wrap.ready .scroll-region-content-inner .footer-reply-area-wrap {
+  background: @sunkenBack;
+  border-left: .5px solid @borderHalfBright;
+  border-bottom: .5px solid @borderBright;
+  border-right: .5px solid @borderHalfBright;
+  box-shadow:inset 0 .5px 1px 1px @shadowWeak;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  z-index: -1 !important; /*för att det ser kasst ut annars*/
+}
+
+#message-list .footer-reply-area-wrap:hover {
+  color: @accent-primary !important;
+}
+#message-list .footer-reply-area-wrap:hover img.content-mask {
+  background-color: @accent-primary;
+}
+#message-list .footer-reply-area {
+  /*box-shadow:inset 0 .5px 1px .5px rgba(0,0,0,.2);*/
+}
+
+/* det ligger en annan grå runt kollapsade meddelanden (tråd)*/
+#message-list .message-item-wrap.collapsed .message-item-white-wrap {
+  background: none !important;
+}
+/* den var lite väl kompakt i överkant...*/
+#message-list .message-item-wrap.collapsed .message-item-area {
+  padding-top: 10px;
+  margin-top: -19px; /*samma avstånd som när den är utvecklad*/
+}
+
+/*kontaktkorten*/
+.sidebar-section {
+  border: .5px solid @weakBorder;
+  box-shadow: 0 0 3px rgba(0,0,0,.2);
+  background: @hoverHighlight;
+}
+.personal-info { /*långa namn går utanför, ser väldigt oproffsigt ut*/
+  overflow: hidden;
+}
+
+.message-list {
+  background: darken(@background-primary, 3%) !important; /*gör lite mer distinkt*/
+}
+
+/*detta är för när redigering inte är fokuserad*/
+#message-list .message-item-wrap .message-item-white-wrap.composer-outer-wrap {
+  /*border: .5px solid @weakBorder;*/
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0,0,0,.2),
+    inset 0 .5px 0 0 @weakBorder,
+    inset 0 -.5px 0 0 @weakBorder,
+    inset .5px 0 0 0 @weakBorder,
+    inset -.5px 0 0 0 @weakBorder;
+}
+#message-list .message-item-wrap .message-item-white-wrap.composer-outer-wrap.focused {
+  /*border: .5px solid @accent-primary;*/
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0,0,0,.3),
+    inset 0 .5px 0 0 @accent-primary,
+    inset 0 -.5px 0 0 @accent-primary,
+    inset .5px 0 0 0 @accent-primary,
+    inset -.5px 0 0 0 @accent-primary;
+  background: @snowWhite;
+}
+
+/*eget fönster
+Vi gör ett försök med att få till en liknande look som i visning av brev
+*/
+.composer-full-window .composer-content-wrap {
+  background: @brightView !important;
+}
+.column-Center .composer-inner-wrap .composer-centered.restrict-width {
+  background: @snowWhite;
+  box-shadow: 0 0 3px 0 @shadowHalf;
+  border-radius: 3px;
+  /*margin: 10px 5px 10px 5px; den måste vara 0 auto som den är från början
+  löser med padding på förälder nedan*/
+}
+.composer-inner-wrap .compose-body-scroll .scroll-region-content .scroll-region-content-inner {
+  padding: 10px 5px 10px 5px;
+}
+.column-Center .composer-header {
+
+}
+.composer-full-window .composer-inner-wrap .compose-body {
+  border-radius: 0 0 3px 3px;
+}
+/* till mottagare namn -skyltar/knappar.*/
+.tokenizing-field .token {
+  font-size: 9.5pt;
+  box-shadow: 0 .5px .5px .5px rgba(0,0,0,.0);
+  background: transparent !important;
+  color: #666;
+}
+.tokenizing-field .token:hover,
+.composer-participant-field .button-dropdown:hover .primary-item,
+.composer-participant-field .button-dropdown:hover .only-item, {
+  color: @accent-primary;
+  border: none;
+  box-shadow: none;
+  background: @snowWhite;
+}
+/* mottagarna har egen tagg för typsnittsvikt*/
+.composer-participant-field .participant .participant-primary {
+  font-weight: 500;
+}
+/*dropdown-listor kontakter*/
+.tokenizing-field .content-container,
+.button-dropdown.open.open-down .secondary-items {
+  background: @snowWhite !important;
+  border: .5px solid @toolbar;
+  border-radius: 0 0 3px 3px !important;
+  box-shadow: 0 1px 3px 0 @shadowWeak;
+}
+.button-dropdown.open.open-down .secondary-items:hover {
+  /*background: @accent-primary !important;
+  color: @snowWhite;*/
+}
+
+/* aktivt från-konto */
+.composer-participant-field .button-dropdown .primary-item,
+.composer-participant-field .button-dropdown .only-item {
+  /*color: @accent-primary-dark;*/
+  box-shadow: 0 .5px .5px .5px rgba(0,0,0,.0);
+  color: #666;
+}
+.composer-participant-field .button-dropdown.selected .primary-item,
+.composer-participant-field .button-dropdown.selected .only-item,
+.tokenizing-field .token.selected {
+  background: @accent-primary !important;
+  color: @snowWhite !important;
+  box-shadow: 0 .5px .5px .5px rgba(0,0,0,.2) !important;
+  border: none !important;
+}
+/*signaturen*/
+.composer-participant-field .dropdown-component .signature-button-dropdown:hover .only-item {
+background: none !important;
+}
+
+/*ämne (den här är fan lite marig att designa)*/
+.composer-inner-wrap .composer-subject input {
+  padding: 10px 22px 10px 10px;
+  background-color: #fafafa;
+  border: dashed 1px #d1d1d1;
+  border-radius: 5px;
+  margin: 5px 20px 5px 20px;
+  width: -webkit-fill-available;
+  font-size: 14pt;
+  font-weight: 300;
+  text-shadow: 0 0.5px 0 white;
+  color: #666;
+}
+.composer-inner-wrap .composer-subject input:focus {
+  color: @accent-primary;
+}
+
+/* lådan med formaterings-Verktyg bör vara genomskinlig */
+.message-item-white-wrap.composer-outer-wrap.focused .RichEditor-toolbar .inner {
+  background: transparent !important;
+  border: 0 none transparent !important;
+}
+
+/*låda med verktyg och skicka-knapp*/
+.composer-inner-wrap .composer-action-bar-wrap .composer-action-bar-content {
+  padding: 8px 8px;
+}
+
+.composer-inner-wrap .composer-action-bar-wrap .btn.btn-toolbar:not(.btn-emphasis),
+/*.composer-inner-wrap .composer-action-bar-wrap .btn-send*/ {
+  margin: 2px 1px 1px 1px;
+  background-image: linear-gradient(#e6e6e6, #e1e1e1);
+}
+.btn.btn-toolbar.btn-trash { /* specifikt för redigeringsvyn */
+  padding-right: 8px !important;
+}
+.btn {
+  font-size: 13.2px !important;
+}
+.composer-inner-wrap .composer-action-bar-wrap .action-bar-animation-wrap {
+  margin: 0px !important;
+  margin-left: 3px !important;
+  padding: 0px !important;
+}
+/*provar INTE (haha) att göra en panel*/
+.composer-inner-wrap .composer-centered.restrict-width {
+  /*background: @toolbar;*/
+}
+/*raderna verkar vara producerade av en bakgrund som läggs in via :after*/
+.composer-inner-wrap .composer-subject:after,
+.composer-participant-field:after {
+  background: rgba(150,150,150,.0);
+}
+
+.composer-full-window .composer-content-wrap,
+.composer-full-window .compose-body {
+  background: @snowWhite;
+  /*border-top: .5px solid @weakBorder !important; - den här går ovanför verktygsraden...*/
+}
+
+#message-list .messages-wrap .scroll-region-content-inner {
+  /*padding: 0 !important;*/ /*justera kanske popout-till 0?*/
+}
+.composer-inner-wrap:blurred .RichEditor-toolbar .floating-container,
+.composer-inner-wrap:blurred .RichEditor-toolbar .inner {
+  background: transparent;
+}
+
+/*.RichEditor-toolbar .floating-container:blurred {
+  background: #efebe2;
+  }*/
+.RichEditor-toolbar .floating-container {
+  /*box-shadow: 0 1px 2px @weakBorder;*/
+  border-bottom: .5px solid @toolbar;
+  background: @snowWhite;
+}
+.RichEditor-toolbar .inner {
+  padding: 5px 0 5px 0;
+}
+.composer-full-window .RichEditor-toolbar .inner {
+  background: @snowWhite;
+}
+
+.RichEditor-toolbar .inner button {
+/*  border: .5px solid @weakBorder; - blir mer cleant utan kanter*/
+  border-radius: 3px;
+  /*margin-right: 5px; utan kanter så blir denna överflödig*/
+  padding: 0px 13px 0px 13px;
+}
+.RichEditor-toolbar .inner button:hover {
+  color: @accent-primary;
+}
+/*en extra-inställning för select, globala finns i headerbar-inställningarna*/
+.RichEditor-toolbar button.with-select select {
+  margin-left: 2px;
+  /*margin-right: 1px;*/
+  padding: 1.5px 5px 2px 5px;
+}
+.RichEditor-toolbar .inner button.undefined.with-select {
+  border: none !important;
+}
+.RichEditor-toolbar button.with-select select {
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.RichEditor-toolbar button.with-select:hover select {
+  background: transparent !important;
+  color: @accent-primary !important;
+}
+.RichEditor-toolbar button.with-select select:focus,
+.RichEditor-toolbar button.with-select:active select {
+  background: transparent;
+  color: #333;
+}
+.RichEditor-toolbar button.with-select:active option {
+  color: #333 !important;
+}
+.RichEditor-toolbar button.with-select {
+  /*background-image: linear-gradient(#e6e6e6 , #d1d1d1);
+  border: .5px solid rgba(255,255,255,.2);
+  border-top: .5px solid rgba(255,255,255,.9);
+  border-radius: 3px;
+  box-shadow: 0 0 0 .5px @weakBorder !important;
+  text-shadow: 0 .5px 0 @white;*/
+  margin: 0px 5px 0px 5px;
+  padding: 0px 0px 0px 3px !important;
+}
+
+.RichEditor-toolbar .divider {
+  border: none !important;
+}
+
+.RichEditor-root .RichEditor-content {
+
+}
+.composer-inner-wrap .composer-action-bar-wrap,
+.composer-full-window .composer-inner-wrap .composer-action-bar-wrap {
+  background: @barLightTwinBorder;
+  border-top: .5px solid @weakBorder;
+  box-shadow: inset 0 2px 1px rgba(0,0,0,.1),
+    inset 0 -.5px 0 0 @weakBorder,
+    inset .5px 0 0 0 @weakBorder,
+    inset -.5px 0 0 0 @weakBorder !important;
+}
+.composer-full-window .composer-inner-wrap .composer-action-bar-wrap {
+  border-radius: 0px 0px 0px 0px !important;
+  box-shadow: inset 0 2px 1px rgba(0,0,0,.1) !important;
+}
+
+
+/*stil direkt på dropdownlista-html-taggarna*/
+/*select {
+  background-image: linear-gradient(#e6e6e6 , #d1d1d1);
+  border: .5px solid @weakBorder;
+  border-radius: 3px;
+}*/
+/*default scroll-plupp, meddelandelistan behöver lite mer utrymme under denna*/
+
+.scrollbar-track { /*funkar bra för att läsa meddelanden. I fullbody redigering så finns den i ui-variables */
+  border: 0px none transparent !important;
+  padding: 13px !important;
+  padding-right: 3px !important;
+  margin-right: 0px !important;
+}

@@ -1,0 +1,54 @@
+// Den här kör bakgrunden för hela högra delen
+.column-ThreadList
+ {
+  /*height: 100%;
+  background: #ff0000;*/
+  border-top: .5px solid @weakBorder;
+}
+
+/* denna gör mörka ikoner/bilder ljusare... undrar om det finns en "img.content-bright"
+sätter den till 0 så att inte ikoner på ljusa ytor blir osynliga
+*/
+
+/*gör det mindre kladdigt i listan*/
+.thread-list .list-item, .draft-list .list-item {
+  border: 0 none transparent;
+  border-bottom: .5px solid @weakBorder !important;
+}
+
+/*lästa borde highlightas högre än olästa när de hovras*/
+/*olästa blir mörkare vid :hover, dom borde highlightas*/
+.list-item:hover, .list-item .unread:hover {
+  background: @unreadThread !important; /*@hoverHighlight*/
+}
+.list-item.focused {
+  text-shadow: 0 0 3px rgba(100,100,100,.05);
+}
+body.is-blurred .list-container .list-item.focused {
+  text-shadow: 0 0 2px rgba(0,0,20,.0) !important;
+}
+.list-item.focused:hover,
+.list-item.selected:hover {
+  background: @accent-primary-dark !important;
+}
+
+
+/*lästa meddelanden*/
+.thread-list .list-item:not(.unread):not(.selected):not(.focused) {
+  color: @text-color !important;
+}
+
+
+/*stil direkt på dropdownlista-html-taggarna*/
+/*select {
+  background-image: linear-gradient(#e6e6e6 , #d1d1d1);
+  border: .5px solid @weakBorder;
+  border-radius: 3px;
+}*/
+/*default scroll-plupp, meddelandelistan behöver lite mer utrymme under denna*/
+
+/*.column-ThreadList .scrollbar-track {
+  border: 0px none transparent !important;
+  padding: 10px !important;
+  padding-right: 4px !important;
+}*/

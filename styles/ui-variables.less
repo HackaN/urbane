@@ -1,0 +1,198 @@
+/*
+Include the standard variables from Mailspring's base theme:
+https://github.com/Foundry376/Mailspring/blob/master/app/static/base/ui-variables.less#L37:L40
+*/
+@import "base/ui-variables";
+
+@gray-base: rgba(60,60,60,.8);
+@gray-darker: darken(@gray-base, 13.5%);
+@gray-dark: darken(@gray-base, 20%);
+@gray: darken(@gray-base, 33.5%); /*scroll plupp*/
+@gray-light: lighten(@gray-base, 46.7%);
+@gray-lighter: lighten(@gray-base, 92.5%);
+@white: #f5f5f5;
+@strongBorder: #898989;
+@midBorder: #9f9f9f;
+@weakBorder: #a6a6a6;
+@weakerBorder: #b6b6b6;
+@weakBorderBS: rgba(106,106,106,.6);
+@hoverHighlight: #fafafa;
+@snowWhite: #fff;
+@notePad: #f5f3eb;
+@sideBar: #e2e2e2;
+@view: #f5f5f5;
+@brightView: #ededed;
+@readThread: #f0f0f0;
+@unreadThread: #f5f5f5;
+@barAndToolButtons: linear-gradient(#e6e6e6 , #d1d1d1);
+@toolbar: #d1d1d1; /*som är i anslutning med headerbar/titlebar*/
+@barLightTwinBorder: #dadada;
+@barLightTwinBorderBS: rgba(250,250,250,.3);
+@shadowHalf: rgba(0,0,0,.5);
+@shadowHalfWeak: rgba(0,0,0,.35);
+@shadowWeak: rgba(0,0,0,.2);
+@sunkenBack: rgba(0,0,0,.05);
+@borderAlmostSuperBright: rgba(255,255,255,.9);
+@borderBright: rgba(255,255,255,.5);
+@borderHalfBright: rgba(255,255,255,.35);
+@borderSideBright: rgba(255,255,255,.3);
+
+/*markerade meddelanden*/
+@accent-primary: #1f9bfc; /*#50ADF8 (#2b9df9 funkar också) förut, men kör lite mörkare för att f¨ fram vit text bättre*/
+@accent-primary-dark: darken(@accent-primary, 10%);
+
+
+@text-color-heading: #f00 !important;
+
+
+/*Headerbar*/
+@background-headerbar: #d10000;
+@background-primary: @brightView; /* headerbar, meddelandelista, runt meddelande, inforuta*/
+@background-off-primary: #e2e2e2; /* gör denna till vy-ytor*/
+@background-secondary: #f5f5f5; /* Bakgrund runt meddelande och h-sida */
+@background-tertiary: #0000ff !important; /*vet ej vad denna gör*/
+
+@border-color-primary: darken(@background-primary, 30%);
+@border-color-secondary: darken(@background-secondary, 30%);
+@border-color-tertiary: lighten(@background-tertiary, 10%);
+@border-color-divider: @border-color-secondary;
+
+@text-color: #333;
+@text-color-subtle: fadeout(@text-color, 20%); /*meddelande-preview Olästa meddelanden & mappar*/
+@text-color-very-subtle: fadeout(@text-color, 40%); /*Etiketter & detaljer runt om i UI*/
+@text-color-inverse: white;
+@text-color-inverse-subtle: fadeout(@text-color-inverse, 20%);
+@text-color-inverse-very-subtle: fadeout(@text-color-inverse, 50%);
+@text-color-heading: #5f5f5f;
+
+@text-color-link: @accent-primary;
+@text-color-link-hover: @accent-primary-dark;
+@text-color-link-active: @accent-primary-dark;
+
+/* knappar i headerbar och andra ställen */
+@btn-default-bg-color: lighten(@background-primary, 30%);
+@dropdown-default-bg-color: #f5f5f5;
+
+@input-bg: #ffffff; /*sökfältet*/
+@input-border: @border-color-divider;
+
+
+@list-bg: rgba(100,100,100,0); /* Scrollbar-base*/
+@list-border: rgba(60,60,60,.0); /*linjer mellan meddelanden*/
+@list-selected-color: @text-color-inverse;
+@list-focused-color: @text-color;
+
+@list-hover-bg: lighten(@list-bg, 80%);
+@list-focused-color: #fff;
+@list-focused-bg: @accent-primary;
+@list-focused-border: @list-focused-bg;
+@list-selected-color: inherit;
+@list-selected-bg: mix(@component-active-color, @list-bg, 17%);
+@list-selected-border: mix(@component-active-color, @list-bg, 50%);
+
+
+@toolbar-background-color: @background-primary;
+@panel-background-color: @background-off-primary !important; /*mappar v-sidofält*/
+
+/* mer tweaks */
+
+
+.activity-dashboard {
+  background: @brightView;
+}
+
+.scrollbar-track:hover {
+  border: 0px none transparent !important;
+  padding: 12px !important;
+  padding-right: 1px !important;
+}
+.column-RootSidebar .scrollbar-track:hover,
+.column-ThreadList .scrollbar-track:hover,
+.composer-inner-wrap .compose-body-scroll .scrollbar-track:hover,
+#message-list .messages-wrap.ready .scrollbar-track:hover {
+  border: 0px none transparent !important;
+  padding: 5px !important;
+  padding-right: 3px !important;
+}
+
+.scrollbar-track .scrollbar-handle {
+  border: 1px @strongBorder solid !important;
+}
+
+/*Fönsterknapparna...*/
+
+body.platform-linux .toolbar-window-controls {
+
+}
+
+body.platform-linux .toolbar-window-controls .close {
+background: none;
+transform: rotate(-45deg) !important;
+font-size: 20pt;
+font-weight: 300;
+margin-left: -20px;
+text-shadow: -.5px .5px 0 rgba(255,255,255,.9);
+color: #7a7a7a;
+}
+body.platform-linux .toolbar-window-controls .close:before {
+  content: "+"; /*kryss: \0353 gånger: \00D7*/
+  padding-left: 16px;
+}
+body.platform-linux .toolbar-window-controls .close:hover {
+  color: #555;
+}
+body.platform-linux .toolbar-window-controls .close:active {
+  color: #fc1b1f; /*#dc0f0f*/
+}
+
+/*HTML till CSS koder: http://www.evotech.net/articles/testjsentities.html*/
+/*Symboler med både HTML och CSS: https://www.tutorialjinni.com/html-symbols-entity-codes.html*/
+
+body.platform-linux .toolbar-window-controls .minimize {
+  background: none;
+  font-size: 10pt;
+  font-weight: 600;
+  text-shadow: 0 .5px 0 rgba(255,255,255,.9);
+  color: #7a7a7a;
+  margin-left: 21px;
+  margin-top: 2px;
+}
+body.platform-linux .toolbar-window-controls .minimize:before {
+  content: '\2913'; /*&#10515*/
+}
+body.platform-linux .toolbar-window-controls .minimize:hover {
+  color: #555;
+}
+body.platform-linux .toolbar-window-controls .minimize:active {
+  color: @accent-primary-dark;
+}
+
+
+body.platform-linux .toolbar-window-controls .maximize {
+  background: none;
+  font-size: 12pt;
+  font-weight: 600;
+  text-shadow: 0 .5px 0 rgba(255,255,255,1);
+  color: #7a7a7a;
+  margin-left: 41px;
+  margin-top: -21.5px;
+}
+body.platform-linux .toolbar-window-controls .maximize:before {
+  content: '\2922'; /*\2912*/
+}
+
+body.platform-linux .toolbar-window-controls .maximize:hover {
+  color: #555;
+}
+body.platform-linux .toolbar-window-controls .maximize:active {
+  color: @accent-primary-dark;
+}
+.sheet-container {
+  border: .5px solid @midBorder;
+  border-top: .5px solid @midBorder;
+  border-radius: 0px;
+}
+body {
+  /*border: .5px solid @weakBorder;
+  border-radius: 1px;*/
+}
